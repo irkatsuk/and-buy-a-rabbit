@@ -115,10 +115,10 @@ def handle_dialog(req, res):
             'suggests': [
                 "Не хочу.",
                 "Не буду.",
-                "Отстань!",
-                "Ладно"
+                "Отстань!"
             ]
         }
+        res['response']['buttons'] = get_suggests(user_id)
         return
 
     # Убеждаем купить слона
