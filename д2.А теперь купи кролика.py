@@ -78,6 +78,7 @@ def handle_dialog(req, res):
                 "Не хочу.",
                 "Не буду.",
                 "Отстань!",
+                "Ладно"
             ]
         }
         # Заполняем текст ответа
@@ -110,6 +111,14 @@ def handle_dialog(req, res):
             buy_rabbit = False
             return
         res['response']['text'] = 'А теперь купи кролика!'
+        sessionStorage[user_id] = {
+            'suggests': [
+                "Не хочу.",
+                "Не буду.",
+                "Отстань!",
+                "Ладно"
+            ]
+        }
         return
 
     # Убеждаем купить слона
