@@ -145,7 +145,7 @@ def get_suggests(user_id):
     if len(suggests) < 2 and buy_elephant:
         suggests.append({
             "title": "Ладно",
-            "url": "https://market.yandex.ru/search?text=слон",
+            "url": "https://market.yandex.ru/search?text=слон+кролик",
             "hide": True
         })
 
