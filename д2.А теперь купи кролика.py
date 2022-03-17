@@ -81,10 +81,7 @@ def handle_dialog(req, res):
             ]
         }
         # Заполняем текст ответа
-        if not buy_elephant:
-            res['response']['text'] = 'Привет! Купи слона!'
-        else:
-            res['response']['text'] = 'Привет! Купи кролика!'
+        res['response']['text'] = 'Привет! Купи слона!'
         # Получим подсказки
         res['response']['buttons'] = get_suggests(user_id)
         return
