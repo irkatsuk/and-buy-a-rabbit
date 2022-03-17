@@ -106,6 +106,8 @@ def handle_dialog(req, res):
             res['response']['text'] = 'Слона и кролика можно найти на ' \
                                       'Яндекс.Маркете!'
             res['response']['end_session'] = True
+            buy_elephant = False
+            buy_rabbit = False
             return
         res['response']['text'] = 'А теперь купи кролика!'
         return
@@ -140,7 +142,7 @@ def get_suggests(user_id):
 
     # Если осталась только одна подсказка, предлагаем подсказку
     # со ссылкой на Яндекс.Маркет.
-    if len(suggests) < 2:
+    if len(suggests) < 2 and buy_elephant:
         suggests.append({
             "title": "Ладно",
             "url": "https://market.yandex.ru/search?text=слон",
